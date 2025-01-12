@@ -1,5 +1,32 @@
 # Eliza
 
+pnpm install --no-frozen-lockfile
+pnpm start --character="characters/trump.character.json"
+
+Chain Configuration
+By default, Ethereum mainnet is enabled. To enable additional chains, add them to your character config:
+
+"settings": {
+    "chains": {
+        "evm": [
+            "base", "arbitrum", "pulsechain"
+        ]
+    }
+}
+Note: The chain names must match those in the viem/chains.
+
+Custom RPC URLs
+By default, the RPC URL is inferred from the viem/chains config. To use a custom RPC URL for a specific chain, add the following to your .env file:
+
+ETHEREUM_PROVIDER_<CHAIN_NAME>=https://your-custom-rpc-url
+Example usage:
+
+ETHEREUM_PROVIDER_IOTEX=https://iotex-network.rpc.thirdweb.com
+Custom RPC for Ethereum Mainnet
+To set a custom RPC URL for Ethereum mainnet, use:
+
+EVM_PROVIDER_URL=https://your-custom-mainnet-rpc-url
+
 ## Edit the character files
 
 Open `src/character.ts` to modify the default character. Uncomment and edit.

@@ -2,6 +2,7 @@
 
 pnpm install --no-frozen-lockfile
 pnpm start --character="characters/trump.character.json"
+pnpm add @elizaos/plugin-evm
 
 Chain Configuration
 By default, Ethereum mainnet is enabled. To enable additional chains, add them to your character config:
@@ -34,6 +35,7 @@ Open `src/character.ts` to modify the default character. Uncomment and edit.
 ### Custom characters
 
 To load custom characters instead:
+pnpm start --character="characters/trump.character.json"
 - Use `pnpm start --characters="path/to/your/character.json"`
 - Multiple character files can be loaded simultaneously
 
